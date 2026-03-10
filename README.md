@@ -1,4 +1,4 @@
 # ESI_Escape
 Proyecto UCA MP
 # Autores
-Pedro Martín Velázquez, Guillermo Gonzalez Coronilla, Manuel Aleandro Fedriani Codeso
+Pedro Martín Velázquez, Guillermo González Coronilla, Manuel Alejandro Fedriani Codeso
