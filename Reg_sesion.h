@@ -8,6 +8,10 @@ typedef struct{
 } Registro;
 
 int inicio_sesion(Registro reg[]); //devuelve un valor dependiendo de si ha iniciado sesion correctamente o no
-void realizar_reg(Registro reg[]); //registra a un nuevo usuario almacenando
+
+//Esta función registra los nuevos jugadores, almacenando su nombre, un id que se le otorga automáticamente y una contraseña que el usuario introduzca
+//Verifica primero antes de almacenar un jugador si el nombre que se introduce ya existe
+//Parámetros: estructura con todos los jugadores dentro del sistema y tamaño de la estructura
+void realizar_reg(Registro **reg, int n);
 
 #endif

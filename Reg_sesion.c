@@ -57,18 +57,25 @@ int inicio_sesion(Registro reg[]){               //los parametros los tengo que 
      return 0;
 }
 
-void realizar_reg(Registro reg[]){
+void realizar_reg(Registro **reg, int *n){
 
      char id_intro[3], nombre_intro[21], clave_intro[9];
      int condicion_name=1;
-     int lenght=sizeof(reg);
 
      printf("Introduce un nombre:\n");
      fgets(nombre_intro, 21, stdin);
-     for(int n=0; n<=lenght; n++){
-          if(strcmp(nombre_intro, reg[n].Nombre)==0){
+     for(int m=0; n<=(*n); m++){
+          if(strcmp(nombre_intro, (*reg)[m].Nombre)==0){
                condicion_name=0;
                break;
+          }
+     }
+     if(condicion_name==0)
+          printf("Has un nombre ya existente\n");
+     else{
+          Registro *tmp=realloc(*reg, (*n+1) * sizeof(Registro));
+          if (tmp!=NULL) {
+          *reg = tmp;
           }
      }
 }
