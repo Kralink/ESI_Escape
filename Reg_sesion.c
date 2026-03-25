@@ -64,14 +64,11 @@ void realizar_reg(Registro reg[]){
      int lenght=sizeof(reg);
 
      printf("Introduce un nombre:\n");
-     fgets(id_intro, 21, stdin);
+     fgets(nombre_intro, 21, stdin);
      for(int n=0; n<=lenght; n++){
-          if
-
+          if(strcmp(nombre_intro, reg[n].Nombre)==0){
+               condicion_name=0;
+               break;
+          }
      }
-
-
-
-
-
 }
