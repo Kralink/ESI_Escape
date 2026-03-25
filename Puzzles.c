@@ -2,32 +2,43 @@
 #include<stdlib.h>
 #include "Puzzles.h"
 #include <string.h>
-int puzzle_sala (Puzzle *puzzles[], char*id_sala, int num_puzzles);
-void resuelto (Puzzle *puzzles[], int num_puzzles, char*id_sala);
+Puzzle* puzzle_sala (Puzzle *puzzles[], char*id_sala, int num_puzzles);
+void descripcion (Puzzle *p);
 
 
 
-
-int puzzle_sala (Puzzle *puzzles[], char*id_sala,int num_puzzles)
+Puzzle* puzzle_sala (Puzzle *puzzles[], char*id_sala,int num_puzzles)
 {
-    int existe=67;
     for (int i=0; i<= num_puzzles; i++){
-        if (strcmp (puzzles[i]->id_sala, id_sala)==0){  //Si el id de la sala del puzzle coincide con la sala donde esta el jugador, sale del bucle.
-            existe =i;                                 
-            break;
-        }
-    } return existe;      //Devuelve cual es el puzzle de la sala en la que se encuentra el jugador
+        if (strcmp (puzzles[i]->id_sala, id_sala)==0)  //Devuelve cual es el puzzle de la sala en la que se encuentra el jugador                                
+            return &puzzles[i];
+    } return NULL;       //Si llega hasta aquí significa que ha recorrido todos los puzzles y ninguno coincide
 }
 
 
-void resuelto (Puzzle *puzzles[], int num_puzzles, char*id_sala)
+
+
+void descripcion (Puzzle *p)
 {
-    int hay_puzzle = puzzle_sala (puzzles[LENGHT], id_sala, num_puzzles);  //Vemos primero si existe puzzle en la sala
-    if (hay_puzzle==67){
-        printf("No existe puzzles en esta sala");  
+    if (p==NULL)
         return;
-    }else{
-        if (puzzles[hay_puzzle]->resuelto==1)
-        printf("El puzzle ya ha sido resuelto");
+    printf ("Puzzle: %s",p->nombre);
+    printf("\n %s",p->descripcion);
+}
+
+
+
+int resolver_puzzle(Puzzle *p, char *respuestaUsuario) 
+{
+    if (p->resuelto == 1) {             // Comprobamos si el puzle ya estaba resuelto 
+        printf("Este puzle ya ha sido superado.\n");
+        return 1;
+    }
+    if (strcmp(p->solucion, respuestaUsuario) == 0) {   //Comparamos solucion con la solucion del usuario
+        p->resuelto = 1;
+        return 1;
+    } else{
+        printf("Respuesta incorrecta");
+        return 0;
     }
 }

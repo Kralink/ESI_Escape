@@ -11,8 +11,10 @@ typedef struct {
     int resuelto; //0: sin resolver, 1: resuelto.
 } Puzzle;
 
-int puzzle_sala (Puzzle *puzzles[], char*id_sala, int num_puzzles);
+Puzzle* puzzle_sala (Puzzle *puzzles[], char*id_sala,int num_puzzles);
 //Busca si hay algún puzzle en la sala en la que se encuentra el jugador.
-void resuelto (Puzzle *puzzles[], int num_puzzles, char*id_sala);
-//Comprueba si el puzzle ya ha sido resuelto.
+void descripcion (Puzzle *p);
+//Imprime la descripcion del puzzle junto con su tipo.
+int resolver_puzzle(Puzzle *p, char *respuestaUsuario)
+//Comprueba si el puzzle ya está resuelto y en caso de que no lo está comprueba si la respuesta del jugador es correcta.
 #endif
