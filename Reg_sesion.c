@@ -2,9 +2,6 @@
 #include<string.h>
 #include"Reg_sesion.h"
 
-int inicio_sesion(Registro reg[]);
-void realizar_reg(Registro reg[]);
-
 int inicio_sesion(Registro reg[]){               //los parametros los tengo que estudiar todavía
 
 
