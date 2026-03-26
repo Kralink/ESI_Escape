@@ -15,6 +15,6 @@ Puzzle* puzzle_sala (Puzzle *puzzles[], char*id_sala,int num_puzzles);
 //Busca si hay algún puzzle en la sala en la que se encuentra el jugador.
 void descripcion (Puzzle *p);
 //Imprime la descripcion del puzzle junto con su tipo.
-int resolver_puzzle(Puzzle *p, char *respuestaUsuario)
+int resolver_puzzle(Puzzle *p);
 //Comprueba si el puzzle ya está resuelto y en caso de que no lo está comprueba si la respuesta del jugador es correcta.
 #endif
