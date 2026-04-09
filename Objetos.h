@@ -7,14 +7,20 @@ typedef struct {
     char descripcion [51]; //Descripcion del objeto
     char localizacion [31]; //Localizacion del objeto (Id de la sala, el inventario del jugador o usado si ya se ha utilizado)
 } Objeto;
+//Cabecera: void cambiar_localizacion(Objeto *obj, char *nueva_localizacion);
+//Precondición: Recibe un objeto y la nueva localizacion. 
+//Postcondición: Cambia la localizacion del objeto, ya sea al soltarlo, al cogerlo o al usarlo
 void cambiar_localizacion(Objeto *obj, char *nueva_localizacion);
-//Cambia la localizacion de un objeto a una nueva localizacion (id de sala, inventario o usado).
+//Cabecera: void examinar_objetos(Objeto *objetos[], int id_sala, int num_objetos);
+//Precondición: Recibe la sala en la que se encuentra el jugador
+//Postcondición: Muestra los objetos que hay en la sala donde se encuentra el jugador
 void examinar_objetos(Objeto *objetos[], int id_sala, int num_objetos);
-//Busca que objetos hay en la sala y los muestra por pantalla al "Examninar"
-void nombreo_inventario(Objeto *objetos[], int i);
-//Filtra los objetos cuya localización sea "Inventario" y los muestra por pantalla.
-void descripcion_inventario(Objeto *objetos[], int i);
-//Filtra los objetos cuya localización sea "Inventario" y muestra su descripcion por pantalla.
+//Cabecera: void nombre_inventario(Objeto *objetos[], int i);
+//Precondición: Recibe el vector de objetos 
+//Postcondición: Muestra por pantalla los objetos que están en el inventario
+void nombre_inventario(Objeto *objetos[], int i);
+//Cabecera: int usar_objeto(Objeto *obj, char *id_requerido);
+//Precondición: Recibe un objeto y el id del objeto que hace falta 
+//Postcondición: Devuelve 1 si el objeto es el adecuado o 0 sino lo es 
 int usar_objeto(Objeto *obj, char *id_requerido);
-//Usa el objeto seleccionado y comprueba si sirve para abrir la conexion seleccionada.
 #endif 

@@ -10,11 +10,16 @@ typedef struct {
     char solucion [51]; //Solucion al puzzle.
     int resuelto; //0: sin resolver, 1: resuelto.
 } Puzzle;
-
+//Cabecera: Puzzle* puzzle_sala (Puzzle *puzzles[], char*id_sala,int num_puzzles)
+//Precondición: El jugador tiene que estar en una sala.
+//Postcondición: Devuelve el puzle que hay en la sala en la que se encuentra el jugador (o NULL si no hay)
 Puzzle* puzzle_sala (Puzzle *puzzles[], char*id_sala,int num_puzzles);
-//Busca si hay algún puzzle en la sala en la que se encuentra el jugador.
+//Cabecera: void descripcion (Puzzle *p)
+//Precondición: Recibe el puntero a un puzle
+//Postcondición: Imprime la descripción del puzle junto a su tipo
 void descripcion (Puzzle *p);
-//Imprime la descripcion del puzzle junto con su tipo.
+//Cabecera: int resolver_puzzle(Puzzle *p)
+//Precondición: Recibe el puntero a un puzle
+//Postcondición: Devuelve 1 si se resuelve o 0 si no se resuelve
 int resolver_puzzle(Puzzle *p);
-//Comprueba si el puzzle ya está resuelto y en caso de que no lo está comprueba si la respuesta del jugador es correcta.
 #endif

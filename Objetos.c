@@ -30,14 +30,8 @@ void examinar_objetos(Objeto*objetos[], int id_sala, int num_objetos)
 void nombre_inventario(Objeto *objetos[], int i)
 {
      if (strcmp(objetos[i]->localizacion,"inventario")==0) //Si el objeto está en el inventario, imprimimos su nombre
-        printf("%s \n",objetos[i]->nombre);
-}
-
-
-void descripcion_inventario(Objeto *objetos[], int i)
-{
-  if (strcmp(objetos[i]->localizacion,"inventario")==0) //Si el objeto está en el inventario, imprimimos su descripcion
-        printf("%s \n",objetos[i]->descripcion);
+        printf("%s: %s \n",objetos[i]->nombre, objetos[i]->descripcion);
+       
 }
 
 

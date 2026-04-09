@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include "Puzzles.h"
 #include <string.h>
+
 Puzzle* puzzle_sala (Puzzle *puzzles[], char*id_sala, int num_puzzles);
 void descripcion (Puzzle *p);
 int resolver_puzzle(Puzzle *p);
@@ -48,7 +49,7 @@ int resolver_puzzle(Puzzle *p)
             return 1;
         } else{
             printf("Respuesta incorrecta, te quedan %i intentos.",i);
-            return 0;
         }
-    }
+    }  printf("No te quedan mas intentos, intentalo de nuevo mas tarde.");
+    return 0;
 }
