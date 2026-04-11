@@ -7,16 +7,27 @@ typedef struct Sala{
     char nombre_[31];
     char tipo_[8];    //INICIAL, NORMAL o SALIDA
     char descripcion_[151];
+    int numConexiones_;
 }Sala;
 
-// typedef struct Conexion{
-//     char id_salaOrigen[3];
-// };
 
-void cambiarSala(Sala sala_param){} 
-void describirPrintSala(Sala sala_param){}
-void describirSalidas(Sala sala_param){}
 
+/*
+@brief Esta funcion describe la sala
+@param struct Sala sala_param: 
+@return lo que devuelve
+*/
+void describirSala(const Sala *sala_param);
+
+
+void cambiarSala(Sala sala_param); 
+
+void describirConexiones(Sala sala_param, Conexion* conexionesVec_param, int numConexiones);
+
+
+int esSalaSalida(const Sala *sala);
+
+int esSalaInicial(const Sala *sala);
 
 
 #endif

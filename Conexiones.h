@@ -11,16 +11,30 @@ typedef struct Conexion{
     int estado_;                       //Booleano: 0(False)=bloqueada, 1(True)=Abierto
     char id_condicion_[6];             // id_objeto, id_puzle o 0 si no procede.  
     
+    
 }Conexion;
 
+/*
+@brief Comprueba si puede pasar por 
+*/
+int puedePasarPorConexion(const Conexion *conexion);
 
-void desbloquearConexionObjeto(const Conexion& conexion_param, char* id_param );        // Si son iguales, activa la conexión
+// Si son iguales, activa la conexión
+void desbloquearConexionObjeto(Conexion* conexion_param,const char* id_param );        
 
-void desbloquearConexionPuzle(){}
+void desbloquearConexionPuzle();
 
-void imprimirDebug(const Conexion& conexion_param);           
+void imprimirDebug(const Conexion* conexion_param);           
 
-
+int estaConexionActiva(const Conexion *conexion);
+int estaConexionBloqueada(const Conexion *conexion);
+Conexion* buscarConexionPorId(Conexion *conexiones, int numConexiones, const char *idConexion);
+Conexion* buscarConexionEntreSalas(Conexion *conexiones, int numConexiones, const char *idOrigen, const char *idDestino);
+int existeConexionEntreSalas(const Conexion *conexiones, int numConexiones, const char *idOrigen, const char *idDestino);
+int desbloquearConexionConObjeto(Conexion *conexion, const char *idObjeto);
+int desbloquearConexionConPuzle(Conexion *conexion, const char *idPuzle);
+void mostrarConexion(const Conexion *conexion);
+void mostrarConexionesDesdeSala(const Conexion *conexiones, int numConexiones, const char *idSala);
 
 
 #endif
