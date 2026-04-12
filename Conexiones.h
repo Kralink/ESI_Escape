@@ -5,9 +5,9 @@
 typedef struct Conexion{
     char id_conexion_[4];
     char id_salaOrigen_[3];
-    char nombre_salaOrigen[30];
+    char nombre_salaOrigen_[30];
     char id_salaDestino_[3];
-    char nombre_salaDestino[30];
+    char nombre_salaDestino_[30];
     int estado_;                       //Booleano: 0(False)=bloqueada, 1(True)=Abierto
     char id_condicion_[6];             // id_objeto, id_puzle o 0 si no procede.  
     
@@ -15,7 +15,8 @@ typedef struct Conexion{
 }Conexion;
 
 /*
-@brief Comprueba si puede pasar por 
+@brief Comprueba si puede pasar por la conexión 
+@param const Conexion *conexion
 */
 int puedePasarPorConexion(const Conexion *conexion);
 
